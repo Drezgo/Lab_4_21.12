@@ -22,9 +22,9 @@ public class Main {
             wallet.statistics();
             wall2.statisticsDemo();
             System.out.println("Чи однаковий курс гаманців - " + wallet.isRivne());//<<<<<<<<<<<<------------------------
-            wall3.setExchangeUSD(36.93);//<<<<<<<<<<<<------------------------
-            System.out.println("__________________________ "+wall3.getExchangeUSD()+" $________________________________");//<<<<<<<-----------
-            Wallet3.statistics();
+            wall3.setExchangeUSD1(36.93);//<<<<<<<<<<<<------------------------
+            System.out.println("__________________________ "+wall3.getExchangeUSD1()+" $________________________________");//<<<<<<<-----------
+            wall3.statistics();
             System.out.println("Оберіть наступну дію: ");
             System.out.println("[1]  Конвертувати валюту у USD");
             System.out.println("[2]  Конвертувати валюту у EUR");
@@ -34,6 +34,8 @@ public class Main {
             System.out.println("[5]  Купити 10 $ на 2ий гаманець");
             System.out.println("[6]  Купити 10 $ на 3ій гаманець");
             System.out.println("[0]  Вийти");
+            wall2.methodWallet2();
+
 
             //Вибір дії
             System.out.print("---> ");
@@ -45,6 +47,7 @@ public class Main {
                 case 2:
                     System.out.println(wallet.convertToEUR());
                     break;
+                case 3:
 
                 case 4:
                     System.out.println(wallet.buy10USD(10)+" гривень");
@@ -53,7 +56,7 @@ public class Main {
                     System.out.println(wall2.buy10USDDemo(10.0) +" гривень");
                     break;
                 case 6:
-                    System.out.println(Wallet3.buy10USD(10)+" гривень");
+                    System.out.println(wall3.buy10USD(10)+" гривень");
                     break;
                 case 0:
                     activeSession=false;

@@ -2,16 +2,16 @@
 import java.util.Random;
 import java.util.Scanner;
 
-class Wallet3 {
+class Wallet3 extends Wallet2 {             //<<<<<<<<<<<-------------------------------
     //Створюю клас з рахунками всіх карток
-    static private double activeBalanceUAH = 0;
-    static double activeBalanceUSD;
+    static private double activeBalanceUAH3 = 0;
+    static double activeBalanceUSD3;
     static {
-        activeBalanceUSD=0; //<<<<<<<<<<------------------------3
+        activeBalanceUSD3 =0; //<<<<<<<<<<------------------------3
     }
-    private static double activeBalanceEUR = 0;
-    static private double exchangeUSD = 36.93;
-    private double exchangeEUR = 39.33;
+    private static double activeBalanceEUR3 = 0;
+    static private double exchangeUSD3 = 36.93;
+    private double exchangeEUR3 = 39.33;
     //створюю (клас)об'єкт для унікального 16-значного коду
     static StringBuilder uniCode = new StringBuilder();
     Random random = new Random();
@@ -19,12 +19,12 @@ class Wallet3 {
 
 
     //конструктор
-    Wallet3(double activeBalanceUAH, double activeBalanceUSD, double activeBalanceEUR, double exchangeUSD, double exchangeEUR) {
-        this.activeBalanceUAH = activeBalanceUAH;
-        this.activeBalanceUSD = activeBalanceUSD;
-        this.activeBalanceEUR = activeBalanceEUR;
-        this.exchangeUSD = exchangeUSD;
-        this.exchangeEUR = exchangeEUR;
+    Wallet3(double activeBalanceUAH3, double activeBalanceUSD3, double activeBalanceEUR3, double exchangeUSD3, double exchangeEUR3) {
+        this.activeBalanceUAH3 = activeBalanceUAH3;
+        this.activeBalanceUSD3 = activeBalanceUSD3;
+        this.activeBalanceEUR3 = activeBalanceEUR3;
+        this.exchangeUSD3 = exchangeUSD3;
+        this.exchangeEUR3 = exchangeEUR3;
     }
 
     Wallet3() {
@@ -32,7 +32,7 @@ class Wallet3 {
 
     //Створення початкового балансу та 16-значного коду
     int inputBalance(double BalanceUAH) {
-        activeBalanceUAH = BalanceUAH;
+        activeBalanceUAH3 = BalanceUAH;
         for (int i=1; i<17; i++ ) {
             int randNum = random.nextInt(10);
             uniCode.append(randNum);
@@ -43,67 +43,67 @@ class Wallet3 {
 
 
     //типізований параметризований метод
-    double buy10USD(double volume) {
-        activeBalanceUAH -= volume * exchangeUSD;
-        activeBalanceUSD += 10;
-        return volume * exchangeUSD;
+    public double buy10USD(double volume) {
+        activeBalanceUAH3 -= volume * exchangeUSD3;
+        activeBalanceUSD3 += 10;
+        return volume * exchangeUSD3;
     }
-    static int buy10USD(int volume) { //<-----------------------------3
-        activeBalanceUAH -= volume * exchangeUSD;
-        activeBalanceUSD += 10;
-        return (int) (volume * exchangeUSD);
+    public int buy10USD(int volume) { //<-----------------------------3
+        activeBalanceUAH3 -= volume * exchangeUSD3;
+        activeBalanceUSD3 += 10;
+        return (int) (volume * exchangeUSD3);
     }
 
 
     //Статистика кожної ітерації(перевантажений метод)
-    static void statistics() {
+    public void statistics() {
         System.out.println("_____________________________3ій гаманець_____________________________________________________");
         System.out.println("Ваш унікальний код рахунку: " + uniCode.toString());
-        System.out.println("Баланс Вашої крартки: " + (double) Math.round(activeBalanceUAH * 100) /100 + " гривень");
-        System.out.println("Баланс Вашої 1 валютної крартки: " + activeBalanceUSD + " $");
-        System.out.println("Баланс Вашої 2 валютної крартки: " + activeBalanceEUR + " €");
+        System.out.println("Баланс Вашої крартки: " + (double) Math.round(activeBalanceUAH3 * 100) /100 + " гривень");
+        System.out.println("Баланс Вашої 1 валютної крартки: " + activeBalanceUSD3 + " $");
+        System.out.println("Баланс Вашої 2 валютної крартки: " + activeBalanceEUR3 + " €");
         System.out.println();
     }
 
     //______GET___&___SET____
-    public double getActiveBalanceUAH() {
-        return activeBalanceUAH;
+    public double getActiveBalanceUAH1() {
+        return activeBalanceUAH3;
     }
 
-    public double getActiveBalanceUSD() {
-        return activeBalanceUSD;
+    public double getActiveBalanceUSD1() {
+        return activeBalanceUSD3;
     }
 
-    public double getActiveBalanceEUR() {
-        return activeBalanceEUR;
+    public double getActiveBalanceEUR1() {
+        return activeBalanceEUR3;
     }
 
-    public double getExchangeUSD() {
-        return exchangeUSD;
+    public double getExchangeUSD1() {
+        return exchangeUSD3;
     }
 
-    public double getExchangeEUR() {
-        return exchangeEUR;
+    public double getExchangeEUR1() {
+        return exchangeEUR3;
     }
 
-    public void setActiveBalanceUAH(double activeBalanceUAH) {
-        this.activeBalanceUAH = activeBalanceUAH;
+    public void setActiveBalanceUAH1(double activeBalanceUAH1) {
+        this.activeBalanceUAH3 = activeBalanceUAH1;
     }
 
-    public void setActiveBalanceUSD(double activeBalanceUSD) {
-        this.activeBalanceUSD =  activeBalanceUSD;
+    public void setActiveBalanceUSD1(double activeBalanceUSD1) {
+        this.activeBalanceUSD3 = activeBalanceUSD1;
     }
 
-    public void setActiveBalanceEUR(double activeBalanceEUR) {
-        this.activeBalanceEUR = activeBalanceEUR;
+    public void setActiveBalanceEUR1(double activeBalanceEUR1) {
+        this.activeBalanceEUR3 = activeBalanceEUR1;
     }
 
-    public void setExchangeUSD(double exchangeUSD) {
-        this.exchangeUSD = 2.0 * exchangeUSD; //<<<<<<<<-------------------------
+    public void setExchangeUSD1(double exchangeUSD1) {
+        this.exchangeUSD3 = 2.0 * exchangeUSD1; //<<<<<<<<-------------------------
     }
 
-    public void setExchangeEUR(double exchangeEUR) {
-        this.exchangeEUR = exchangeEUR;
+    public void setExchangeEUR1(double exchangeEUR1) {
+        this.exchangeEUR3 = exchangeEUR1;
     }
 }
 

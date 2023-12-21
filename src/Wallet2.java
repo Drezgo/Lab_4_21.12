@@ -13,33 +13,41 @@ class Wallet2 extends Wallet{         //<<<<<<<<<<<-----------------------------
     Scanner scan = new Scanner(System.in);
 
 
-    //конструктор
-    public Wallet2(double activeBalanceUAH2, double activeBalanceUSD2, double activeBalanceEUR2, double exchangeUSD, double exchangeEUR) {
-        super(exchangeEUR, exchangeUSD);
+    //конструктори
+    public Wallet2(double activeBalanceUAH2, double activeBalanceUSD2, double activeBalanceEUR2, double exchangeUSD1, double exchangeEUR1) {
         this.activeBalanceUAH2 = activeBalanceUAH2;
         this.activeBalanceUSD2 = activeBalanceUSD2;
         this.activeBalanceEUR2 = activeBalanceEUR2;
-        this.exchangeUSD1 = exchangeUSD;
-        this.exchangeEUR1 = exchangeEUR;
+    }
+
+    //    4 лаб   5 завдання super
+
+    public Wallet2(double activeBalanceUAH1, double activeBalanceUSD1, double activeBalanceEUR1, double exchangeEUR1, double exchangeUSD1, double activeBalanceUAH2, double activeBalanceUSD2, double activeBalanceEUR2) {
+        super(activeBalanceUAH1, activeBalanceUSD1, activeBalanceEUR1, exchangeEUR1, exchangeUSD1);
+        this.activeBalanceUAH2 = activeBalanceUAH2;
+        this.activeBalanceUSD2 = activeBalanceUSD2;
+        this.activeBalanceEUR2 = activeBalanceEUR2;
+    }
+
+    Wallet2(){
 
     }
 
-    Wallet2() {
-    }
+
 
     //Створення початкового балансу та 16-значного коду
-    private int inputBalance(double bal) {
+    private void inputBalance(double bal) {
         activeBalanceUAH2 =bal;
         for (int i=1; i<17; i++ ) {
             int randNum = random.nextInt(10);
             uniCode.append(randNum);
-            if (i%4==0) uniCode.append(' ');
+            if (i % 4 == 0) uniCode.append(' ');
         }
-        return 0;
     }
 
 
     void methodWallet2(){
+        methodWallet();
         System.out.println("Перевірка в'язку з другим гаманцем");
     }
 

@@ -4,13 +4,10 @@ import java.util.Scanner;
 
 class Wallet3 extends Wallet2 {             //<<<<<<<<<<<-------------------------------
     //Створюю клас з рахунками всіх карток
-    static private double activeBalanceUAH3 = 0;
-    static double activeBalanceUSD3;
-    static {
-        activeBalanceUSD3 =0; //<<<<<<<<<<------------------------3
-    }
-    private static double activeBalanceEUR3 = 0;
-    static private double exchangeUSD3 = 36.93;
+    private double activeBalanceUAH3 = 0;
+    private double activeBalanceUSD3 = 0;
+    private double activeBalanceEUR3 = 0;
+    private double exchangeUSD3 = 36.93;
     private double exchangeEUR3 = 39.33;
     //створюю (клас)об'єкт для унікального 16-значного коду
     static StringBuilder uniCode = new StringBuilder();
@@ -27,18 +24,24 @@ class Wallet3 extends Wallet2 {             //<<<<<<<<<<<-----------------------
         this.exchangeEUR3 = exchangeEUR3;
     }
 
+
+
     Wallet3() {
     }
 
+    void methodWallet3 (){
+        methodWallet();
+        System.out.println("Перевірка зв`язку першого гаманця з іншими");
+    }
+
     //Створення початкового балансу та 16-значного коду
-    int inputBalance(double BalanceUAH) {
+    void inputBalance(double BalanceUAH) {
         activeBalanceUAH3 = BalanceUAH;
         for (int i=1; i<17; i++ ) {
             int randNum = random.nextInt(10);
             uniCode.append(randNum);
             if (i%4==0) uniCode.append(' ');
         }
-        return 0;
     }
 
 

@@ -6,7 +6,6 @@ import java.util.Scanner;
 class Wallet {
     Wallet2 wallet2 = new Wallet2();
     Wallet3 wallet3 = new Wallet3();
-    //Створюю клас з рахунками всіх карток
     private double activeBalanceUAH1 = 0;
     private double activeBalanceUSD1 = 0;
     private double activeBalanceEUR1 = 0;
@@ -31,7 +30,7 @@ class Wallet {
     }
 
     //Створення початкового балансу та 16-значного коду
-    Wallet inputBalance() {
+    void inputBalance() {
         System.out.print("Введіть суму на яку хочете поповнити баланс картки (у UAH) : ");
         activeBalanceUAH1 =scan.nextDouble();
         for (int i=1; i<17; i++ ) {
@@ -39,7 +38,10 @@ class Wallet {
             uniCode.append(randNum);
             if (i%4==0) uniCode.append(' ');
         }
-        return null;
+    }
+
+    void methodWallet (){
+        System.out.println("Перевірка зв`язку першого гаманця з іншими");
     }
 
     //конвертація
